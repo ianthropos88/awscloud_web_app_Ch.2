@@ -24,7 +24,7 @@ All of these examples can be considered “boilerplate” components that, while
 
 ## > :rocket: **Thank you for your interest in my work.** :blush: ##
 
-This solution aims at building a 3 Tier Web Application with a PostgreSQL Database with a Primary Database and 2 Readable Standbys, in 3 Availability Zones, on AWS.
+This solution aims at building a 3 Tier Web Application Architecture with a PostgreSQL Database which has a Primary Database and 2 Readable Standbys, across 3 Availability Zones, on AWS.
 
 The project is supported by several managed services including **Amazon Elastic Compute Cloud (Amazon EC2)**, **Route 53**, **CloudFront**, **Secrets Manager**, **CloudTrail**, **Security Hub**, **Amazon ECR**, **Transit Gateway**, and required **Cross-Region Replications**, etc.
 
