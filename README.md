@@ -41,7 +41,7 @@ Table - Web application components
 <p align="center">
   <img align="center" src="image/static/AWS_Cloud_Architecture-Single Region.png" width=100%>
 </p>
-<p align="center"><b>Scenario 3:</b> The Architecture Design - 3 Tier Single Region.</p>
+<p align="center"><b>Scenario:</b> The Architecture Design - 3 Tier Single Region.</p>
 
 *System Overview:*
 
