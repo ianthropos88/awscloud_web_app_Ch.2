@@ -1,14 +1,36 @@
 # **3 Tier Web Architecture, which inspires high levels of scalability and performance with AWS Cloud.** :computer: #
 
-The following article provides a look at the classic 3 Tier  Web Application architecture and how it can leverage the AWS Cloud computing infrastructure.
+The following article provides a look at the classic 3 Tier Web Application architecture and how it can leverage the AWS Cloud computing infrastructure.
+
+The multi-tier application (three-tier, n-tier, and so forth.) has been a cornerstone architecture pattern for decades, and remains a popular pattern for user-facing applications. Although the language used to describe a multi-tier architecture varies, a multi-tier application generally consists of the following components:
+
+**Presentation tier:** Component that the user directly interacts with (for example, webpages and mobile app UIs).
+
+**Logic tier:** Code required to translate user actions to application functionality (for example, CRUD database operations and data processing).
+
+**Data tier:** Storage media (for example, databases, object stores, caches and file systems) that hold the data relevant to the application.
+
+The multi-tier architecture pattern provides a general framework to ensure decoupled and independently scalable application components can be separately developed, managed, and maintained (often by distinct teams).
+
+As a consequence of this pattern in which the network (a tier must make a network call to interact with another tier) acts as the boundary between tiers, developing a multi-tier application often requires creating many undifferentiated application components. Some of these components include:
+
+- Code that defines a message queue for communication between tiers.
+
+- Code that defines an application programming interface (API) and a data model.
+
+- Security-related code that ensures appropriate access to the application.
+
+All of these examples can be considered “boilerplate” components that, while necessary in multi-tier applications, do not vary greatly in their implementation from one application to the next.
 
 ## > :rocket: **Thank you for your interest in my work.** :blush: ##
 
-This solution aims at building a 3 Tier web application with a PostgreSQL database on AWS in 3 environments (Development, Staging, & Production).
+This solution aims at building a 3 Tier Web Application with a PostgreSQL Database with a Primary Database and 2 Readable Standbys, in 3 Availability Zones, on AWS.
 
 The project is supported by several managed services including Amazon Elastic Compute Cloud (Amazon EC2), Route 53, CloudFront, Secrets Manager, CloudTrail, Security Hub, Amazon ECR, Transit Gateway, and required Cross-Region Replications, etc.
 
 ## **Architecture Design - 3 Tier Single Region** :thought_balloon: ##
+
+Table - Web application components
 
 | Tier | Components |
 | --- | --- |
@@ -72,3 +94,18 @@ In the above architecture, the security group for the web server cluster might a
 6. **Finding other hosts and services** - In the traditional web hosting architecture, most of your hosts have static IP addresses. In the AWS Cloud, most of your hosts have dynamic IP addresses. Although every EC2 instance can have both public and private DNS entries and will be addressable over the internet, the DNS entries and the IP addresses are assigned dynamically when you launch the instance. They cannot be manually assigned. Static IP addresses (Elastic IP addresses in AWS terminology) can be assigned to running instances after they are launched. You should use Elastic IP addresses for instances and services that require consistent endpoints, such as primary databases, central file servers, and EC2-hosted load balancers.
 
 7. **Caching within the web application** - In-memory application caches can reduce load on services and improve performance and scalability on the database tier by caching frequently used information. Amazon ElastiCache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. You can configure the in-memory cache you create to automatically scale with load and to automatically replace failed nodes. ElastiCache is protocol-compliant with Memcached and Redis, which simplifies migration from your current on-premises solution.
+
+### **Amazon RDS Multi-AZ with two readable standbys for RDS PostgreSQL** ###
+
+Amazon Relational Database Service (Amazon RDS) for PostgreSQL now supports inbound replication from Amazon RDS Single-AZ database (DB) instances and Amazon RDS Multi-AZ DB instances with one standby to Amazon RDS Multi-AZ deployments with two readable standbys. You can use this inbound replication to help migrate your existing Amazon RDS PostgreSQL deployments to Amazon RDS Multi-AZ deployments with two readable standbys, which have one writer instance and two readable standby instances across three availability zones. By creating a Multi-AZ deployment with two readable standbys as a read replica of your existing RDS PostgreSQL database instance, you can promote the read replica to be your new primary, typically within minutes. 
+
+Amazon RDS Multi-AZ deployments provide enhanced availability and durability, making them a natural fit for production database workloads. Deployment of Amazon RDS Multi-AZ with two readable standbys supports up to 2x faster transaction commit latencies than a Multi-AZ deployment with one standby instance. In this configuration, automated failovers typically take under 35 seconds. In addition, the two readable standbys can also serve read traffic without needing to attach additional read replicas.
+
+### **Conclusion** ###
+
+The multi-tier architecture pattern encourages the best practice of creating application components that are simple to maintain, decouple, and scale. When you create a logic tier where integration occurs by API Gateway, you realize these goals while reducing the amount of effort to achieve them. Together, these services provide a HTTPS API front end for your clients and a secure environment to apply your business logic while removing the overhead involved with managing typical server-based infrastructure.
+
+# About Me :sunglasses: #
+- With 10+ years of industry experience, I have thrived in Data Science, Data Governance, IT, Cloud and Product Management. I have a keen interest and expertise in solving business problems using unique logic and analytics. I bring solutions to the table based on competitive Business Acumen and Human Intelligence.
+- Have a look at my portfolio: [Helping organization level all their Seeds Business arguments using Data & Technology | Ex_Zalando | Ex_Freecharge | Ex_Myntra Jabong | Ex_Supercell | Ex_Infosys](https://www.linkedin.com/in/pnchoudhury/)
+- I love talking about #cloudarchitecture, #businessanalytics, #datapipelines, #machinelearning, and #artificialintelligence
