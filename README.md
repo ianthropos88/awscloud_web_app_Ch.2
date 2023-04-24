@@ -1,6 +1,6 @@
 # **3 Tier Web Architecture, which inspires high levels of scalability and performance with AWS Cloud.** :computer: #
 
-The following article provides a look at the classic 3 Tier Web Application architecture and how it can leverage the AWS Cloud computing infrastructure.
+The following article provides a look at the classic 3 Tier Web Application architecture and how it can leverage the AWS Cloud computing infrastructure. **[Chapter 2]**
 
 The multi-tier application (three-tier, n-tier, and so forth.) has been a cornerstone architecture pattern for decades, and remains a popular pattern for user-facing applications. Although the language used to describe a multi-tier architecture varies, a multi-tier application generally consists of the following components:
 
